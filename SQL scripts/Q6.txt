@@ -1,0 +1,8 @@
+SELECT rank_filter.* 
+FROM 
+(SELECT name, region, min_gdp, rank() OVER (PARTITION BY region ORDER BY min_gdp) 
+FROM
+(SELECT name, region, (SELECT MIN(v) FROM  (VALUES (gdp2017), (gdp2018), (gdp2019), (gdp2020)) AS value(v)) as min_gdp FROM gdp
+ORDER BY REGION,min_gdp) as f1) 
+
+rank_filter WHERE RANK <= 3

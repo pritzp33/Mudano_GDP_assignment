@@ -1,0 +1,15 @@
+CREATE TABLE public."gdp"
+(
+    country_code character varying(5) NOT NULL,
+    region character varying(50) NOT NULL,
+    income_group character varying(50),
+    name character varying(50) NOT NULL,
+    "gdp2017" numeric(30,2),
+    "gdp2018" numeric(30,2),
+    "gdp2019" numeric(30,2),
+    "gdp2020" numeric(30,2),
+    PRIMARY KEY (country_code)
+);
+
+ALTER TABLE public."gdp"
+    OWNER to postgres;

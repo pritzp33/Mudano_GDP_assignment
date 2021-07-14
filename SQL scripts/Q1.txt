@@ -1,0 +1,3 @@
+SELECT name 
+FROM gdp 
+WHERE income_group = 'Upper middle income';

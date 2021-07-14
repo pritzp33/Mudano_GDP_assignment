@@ -1,0 +1,9 @@
+SELECT region, SUM(total_gdp) as cum_gdp_per_region
+
+FROM
+
+(SELECT name, region,(COALESCE(gdp2017,0) + COALESCE(gdp2018,0) + COALESCE(gdp2019,0) + COALESCE(gdp2020,0)) AS total_gdp FROM gdp
+ORDER BY region, name) AS f1
+
+GROUP BY region
+ORDER BY sum(total_gdp)

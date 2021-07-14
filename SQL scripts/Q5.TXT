@@ -1,0 +1,5 @@
+SELECT name,
+100 -round((gdp2017/gdp2018)*100,2) AS gdp_per_change_17_18, 
+100 -round((gdp2018/gdp2019)*100,2) AS gdp_per_change_18_19, 
+100 -round((gdp2019/gdp2020)*100,2) AS gdp_per_change_19_20 
+FROM gdp

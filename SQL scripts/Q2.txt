@@ -1,0 +1,4 @@
+SELECT region, name
+FROM gdp 
+WHERE income_group = 'Low income'
+ORDER BY region, name
